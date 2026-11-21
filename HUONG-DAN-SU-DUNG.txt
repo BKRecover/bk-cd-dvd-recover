@@ -1,0 +1,55 @@
+BK CD/DVD Recover 1.0.0 Beta – HƯỚNG DẪN SỬ DỤNG
+=================================================
+
+Phần mềm miễn phí của BK RECOVER để lấy dữ liệu từ đĩa CD/DVD xước, bẩn, oxy hoá hoặc đọc chập chờn.
+Bản Beta: dùng được đầy đủ, còn đang hoàn thiện; gặp lỗi xin báo về địa chỉ ở cuối.
+
+Phần mềm CHỈ ĐỌC đĩa, không bao giờ ghi lên đĩa.
+Nơi lưu ảnh đĩa phải là ổ cứng (không được là ổ CD/DVD), còn trống ít nhất bằng dung lượng đĩa.
+Cần Windows 10/11 64-bit và quyền quản trị (để nói chuyện trực tiếp với ổ đĩa).
+
+CÁC BƯỚC (BkCdDvd.exe, lối tắt "BK CD-DVD Recover")
+---------------------------------------------------
+4 bước: 1 Chọn đĩa → 2 Nơi lưu → 3 Đọc đĩa → 4 Kết quả.
+- Bước 1: cho đĩa vào ổ; chưa thấy ổ thì bấm "Làm mới".
+- Bước 2: chọn thư mục lưu, số lần đọc lại chỗ hỏng (mặc định 2) và có cần file ISO hay không.
+  Nên lau sạch mặt đĩa trước khi đọc (hướng dẫn kèm ảnh động ngay trên màn hình).
+  Nếu thư mục đã có bản đồ của đúng đĩa này (đã đọc dở lần trước), phần mềm đọc tiếp;
+  sau khi lau hoặc đánh bóng đĩa, đánh dấu "Đĩa đã được lau hoặc đánh bóng: đọc lại các chỗ lỗi từ đầu".
+- Bước 3: hình đĩa xanh (đã đọc) / đỏ (lỗi, phóng đại để dễ thấy) / xám (chưa đọc) / bạc nhạt (phần đĩa chưa ghi).
+  Hình vẽ theo dung lượng vật lý của loại đĩa nên vùng ghi kết thúc đúng chỗ như trên mặt đĩa thật.
+  "Tạm dừng" rồi "Đọc tiếp" bất cứ lúc nào; "Dừng, dùng phần đã đọc" lưu lại và sang kết quả.
+  Hết số lần đọc lại mà còn lỗi, phần mềm hỏi đọc thêm hay dừng, kèm hướng dẫn lau đĩa và nút "Đã lau đĩa, đọc lại chỗ lỗi".
+  Đĩa đọc quá kém thì hướng dẫn lau hiện ngay giữa chừng. Đọc lâu mà tốc độ tụt hẳn (đĩa nóng) thì phần mềm
+  đề nghị nghỉ 15 phút cho đĩa nguội rồi tự đọc tiếp.
+  Thư mục lưu là ổ mạng/thư mục chia sẻ vẫn dùng được nhưng chậm hơn ổ cứng trong máy.
+- Bước 4: danh sách file kèm tình trạng, tick chọn rồi "Lưu file đã chọn"; có BAO-CAO.txt trong thư mục lưu.
+  Hiện đọc được hệ thống file ISO 9660 / Joliet (đĩa dữ liệu, đĩa phim DVD, VCD). UDF chưa có.
+- Menu ☰ > Chế độ trình chiếu: ẩn phần trăm và chi tiết kỹ thuật (để chụp ảnh, quay video).
+- Menu ☰ > Language / Ngôn ngữ: English hoặc Tiếng Việt, đổi ngay không cần mở lại; mặc định English,
+  lựa chọn được nhớ ở %LOCALAPPDATA%\BK CD-DVD Recover\cau-hinh.txt. Báo cáo và nhật ký .log theo ngôn ngữ đang chọn.
+- Tham số: BkCdDvd.exe --trinh-chieu --chup "<thư mục>" (F12 chụp một ảnh, F11 bắt đầu/dừng ghi khung hình);
+  --ngon-ngu vi|en để chạy một lần bằng ngôn ngữ đó mà không đổi lựa chọn đã nhớ.
+
+DÒNG LỆNH (bkcd-cli, cho kỹ thuật viên)
+---------------------------------------
+Mở "Dòng lệnh BK CD-DVD Recover" trong menu Start, hoặc gõ bkcd-cli ở cửa sổ lệnh bất kỳ.
+  bkcd-cli o-dia                                   xem các ổ CD/DVD
+  bkcd-cli thong-tin H                             xem đĩa trong ổ H
+  bkcd-cli anh H "D:\Cuu-dia\Ca-1" --ten ca-1      đọc đĩa ra ảnh (Ctrl+C: dừng và lưu; chạy lại cùng lệnh để đọc tiếp)
+  Tuỳ chọn: --doc-lai <số lần>   --toi-da <phút> (chạy tối đa rồi tự dừng, cho ổ nghỉ)
+            --doc-lai-cho-loi (sau khi lau/đánh bóng đĩa hoặc đổi ổ: đọc lại chỗ lỗi bằng lượt nhanh)
+
+KẾT QUẢ TRONG THƯ MỤC LƯU
+-------------------------
+  <tên>.iso (DVD) hoặc <tên>.bin + <tên>.cue (CD)   ảnh đĩa
+  <tên>.map    bản đồ sector (đừng xoá nếu còn muốn đọc tiếp)
+  <tên>.log    nhật ký
+
+Nếu phần mềm không mở được cửa sổ: xem tệp loi-khoi-dong.txt trong thư mục cài (hoặc %LOCALAPPDATA%\BK CD-DVD Recover)
+và gửi tệp đó kèm báo lỗi.
+
+Đĩa còn chỗ không đọc được dù đã lau và đọc lại nhiều lần: phòng lab BK RECOVER có thể đánh bóng và đọc bằng thiết bị chuyên dụng.
+
+Báo lỗi / góp ý: https://github.com/BKRecover/bk-cd-dvd-recover/issues · support@bkrecover.com · 1900 636 196
+Website: bkrecover.com · recoverdata.com.vn

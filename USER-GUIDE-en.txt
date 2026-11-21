@@ -1,0 +1,56 @@
+BK CD/DVD Recover 1.0.0 Beta – USER GUIDE
+=========================================
+
+Free software from BK RECOVER for getting data off scratched, dirty, oxidised or flaky CDs and DVDs.
+Beta: fully usable, still being polished; please report problems to the address at the end.
+
+The software ONLY READS discs; it never writes to a disc.
+The disc image must be saved on a hard disk (never on a CD/DVD drive) with at least as much free space as the disc holds.
+Needs Windows 10/11 64-bit and administrator rights (to talk to the drive directly).
+
+THE STEPS (BkCdDvd.exe, shortcut "BK CD-DVD Recover")
+-----------------------------------------------------
+4 steps: 1 Choose disc → 2 Save to → 3 Read disc → 4 Results.
+- Step 1: put the disc in; if the drive is not listed yet, click "Refresh".
+- Step 2: choose the destination folder, how many times to retry damaged spots (default 2) and whether you want an ISO file.
+  Clean the disc before reading (an animated guide is right there on the page).
+  If the folder already holds a map of this very disc (a read left unfinished), the software reads on from there;
+  after cleaning or polishing the disc, tick "The disc has been cleaned or polished: read the damaged spots again from scratch".
+- Step 3: disc picture — green (read) / red (damaged, exaggerated so it can be seen) / grey (not read yet) / pale silver (unrecorded part).
+  The picture is laid out on the physical capacity of the disc type, so the recorded area ends where it does on the real disc.
+  "Pause" and "Resume" at any time; "Stop, use what was read" saves and goes to the results.
+  When damage remains after the retry passes, the software asks whether to read more or stop, with the cleaning guide and
+  a button "Disc cleaned, read the damaged spots again". A disc that reads very badly shows the cleaning guide at once.
+  When reading has gone on for a long time and the speed drops right off (a warm disc), the software offers a 15-minute
+  rest and resumes by itself afterwards.
+  A network drive or shared folder works as the destination but is slower than an internal hard disk.
+- Step 4: the file list with each file's state; tick files and "Save selected files"; REPORT.txt is written to the destination folder.
+  File systems read today: ISO 9660 / Joliet (data discs, DVD-Video, VCD). UDF not yet.
+- Menu ☰ > Presentation mode: hides percentages and technical details (for photographs and video).
+- Menu ☰ > Language: English or Tiếng Việt, applied at once; English by default, the choice is remembered in
+  %LOCALAPPDATA%\BK CD-DVD Recover\cau-hinh.txt. The report and the .log follow the chosen language.
+- Switches: BkCdDvd.exe --trinh-chieu --chup "<folder>" (F12 saves one picture, F11 starts/stops saving frames);
+  --lang vi|en runs once in that language without changing the remembered choice.
+
+COMMAND LINE (bkcd-cli, for technicians; Vietnamese)
+----------------------------------------------------
+Open "BK CD-DVD Recover command line" from the Start menu, or type bkcd-cli in any command window.
+  bkcd-cli o-dia                                   list CD/DVD drives
+  bkcd-cli thong-tin H                             describe the disc in drive H
+  bkcd-cli anh H "D:\Discs\Case-1" --ten case-1    read the disc into an image (Ctrl+C: stop and save; run the same command again to read on)
+  Options: --doc-lai <n>   --toi-da <minutes> (run at most this long, then stop so the drive can rest)
+           --doc-lai-cho-loi (after cleaning/polishing the disc or changing drives: re-read the damaged spots with the fast pass)
+
+WHAT THE DESTINATION FOLDER HOLDS
+---------------------------------
+  <name>.iso (DVD) or <name>.bin + <name>.cue (CD)   the disc image
+  <name>.map    the sector map (keep it if you may want to read on)
+  <name>.log    the log
+
+If the window never appears: look at loi-khoi-dong.txt in the installation folder (or %LOCALAPPDATA%\BK CD-DVD Recover)
+and send that file with your report.
+
+Spots that stay unreadable after cleaning and repeated passes: the BK RECOVER lab can polish the disc and read it with specialised equipment.
+
+Bug reports / suggestions: https://github.com/BKRecover/bk-cd-dvd-recover/issues · support@bkrecover.com · +84 1900 636 196
+Website: bkrecover.com · recoverdata.com.vn

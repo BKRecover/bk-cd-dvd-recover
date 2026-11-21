@@ -1,0 +1,13 @@
+﻿TERMS OF USE – BK CD/DVD Recover
+
+1. BK CD/DVD Recover is published by Vietnam Computer Solutions JSC (BK RECOVER) and is free for every user: individuals, shops and service companies.
+
+2. The software is provided as is. BK RECOVER does not guarantee that the software can read every disc, and accepts no liability for any loss of data, damage to discs or other damage arising from its use. The software only reads discs; it never writes to them.
+
+3. You may not reverse-engineer, decompile, disassemble or modify the software, or use its code in another product.
+
+4. You may redistribute the software only in its original, unmodified form, together with these terms. You may not repackage it or publish it under another name.
+
+5. The software does not connect to the internet and collects no information about its users.
+
+Contact: bkrecover.com · recoverdata.com.vn · +84 1900 636 196 · support@bkrecover.com
